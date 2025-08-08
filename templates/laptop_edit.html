@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Laptop</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <style>
+    .car {
+      font-weight: bold;
+      font-size: 35px;
+      margin-left: 40%;
+      margin-top: 5%;
+    }
+
+    .thanks {
+      margin-top: 7%;
+      text-align: center;
+      font-size: 35px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+  </style>
+</head>
+
+<body style="background-color: rgb(152, 163, 163);">
+
+  <!-- ✅ Navbar moved inside body -->
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="{% url 'about' %}">Laptop</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <h1 style="font-size: 50px; text-align: center;"><b>Contact</b></h1>
+
+  <div class="d-flex justify-content-center align-items-center">
+    <form method="POST" action="{% url 'laptop_edit' laptop.id %}" enctype="multipart/form-data" style="width: 50%;">
+      {% csrf_token %}
+      
+      <div class="mb-3">
+        <label for="nameInput" class="form-label">Name</label>
+        <input name="name" type="text" class="form-control" id="nameInput" value="{{laptop.name}}" placeholder="Name">
+      </div>
+
+      <div class="mb-3">
+        <label for="formFile" class="form-label">Select Image <a href="{{laptop.image.url}}" target="_blank">click to view</a></label>
+        <input name="image" class="form-control" type="file" id="formFile">
+      </div>
+
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Generation</label>
+        <textarea name="generation" class="form-control" id="generation" rows="3">{{laptop.generation}}</textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Processor</label>
+        <textarea name="processor" class="form-control" id="processorInput" rows="3">{{laptop.processor}}</textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="messageInput" class="form-label">Ram</label>
+        <textarea name="ram" class="form-control" id="ramInput" rows="3">{{laptop.ram}}</textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="ssdInput" class="form-label">SSD</label>
+        <textarea name="ssd" class="form-control" id="ssdInput" rows="3">{{laptop.ssd}}</textarea>
+      </div>
+
+      <div class="mb-3">
+        <label for="ssdInput" class="form-label">Detail</label>
+        <textarea name="detail" class="form-control" id="detail" rows="3">{{laptop.detail}}</textarea>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Add Car</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <style>
+    .car {
+      font-weight: bold;
+      font-size: 35px;
+      margin-left: 40%;
+      margin-top: 5%;
+    }
+    .thanks {
+      margin-top: 7%;
+      text-align: center;
+      font-size: 35px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+  </style>
+</head>
+
+<body style="background-color: rgb(152, 163, 163);">
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'car_home' %}">Car Home</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  </div>
+</nav>
+
+<h1 style="font-size: 50px; text-align: center;"><b>Add Car</b></h1>
+<!-- Car Form -->
+  <div class="d-flex justify-content-center align-items-center">
+    <form class="custom-form mt-4" method="post" action="{% url 'car' %}" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="mb-3" style="width: 400px;">
+        <label for="name" class="form-label"><b>Name</b></label>
+        <input name="name" type="text" class="form-control" id="name" placeholder="Enter Name">
+      </div>
+
+      <div class="mb-3" style="width: 400px;">
+        <label for="formFile" class="form-label"><b>Select Image</b></label>
+        <input class="form-control" type="file" name="image" id="formFile">
+      </div>
+
+      <div class="mb-3" style="width: 400px;">
+        <label for="username" class="form-label"><b>Model</b></label>
+        <input name="model" type="text" class="form-control" id="model" placeholder="Enter model" required>
+      </div>
+
+      <div class="mb-3" style="width: 400px;">
+        <label for="engine" class="form-label"><b>Engine</b></label>
+        <input name="engine" type="text" class="form-control" id="engine" placeholder="Engine">
+      </div>
+
+      <div class="mb-3" style="width: 400px;">
+        <label for="enginepower" class="form-label"><b>Engine Power</b></label>
+        <input name="enginepower" type="text" class="form-control" id="enginepower" placeholder="Engine Power">
+      </div>
+
+      <div class="mb-3" style="width: 400px;">
+        <label for="price" class="form-label"><b>Price</b></label>
+        <input name="price" type="text" class="form-control" id="price" placeholder="Price...">
+      </div>
+
+      <div class="mb-3" style="width: 400px;">
+        <label for="madein" class="form-label"><b>Made in</b></label>
+        <input name="madein" type="text" class="form-control" id="madein" placeholder="Made In">
+      </div>
+
+      <div class="mb-3" style="width: 400px;">
+        <label for="topspeed" class="form-label"><b>Top Speed</b></label>
+        <input name="topspeed" type="text" class="form-control" id="topspeed" placeholder="Top Speed">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+</div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>

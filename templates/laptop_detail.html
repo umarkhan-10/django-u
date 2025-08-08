@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ laptop_detail.name }} - Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-white">
+
+<div class="container mt-5">
+    <a href="{% url 'about' %}" class="btn btn-light mb-3">← Back</a>
+
+    <div class="card bg-secondary shadow rounded-4">
+        <img src="{{ laptop_detail.image.url }}" class="card-img-top rounded-top-4" style="height: 400px; object-fit: cover;" alt="{{ laptop_detail.name }}">
+        <div class="card-body">
+            <h2 class="card-title">{{ laptop_detail.name }}</h2>
+            <p class="card-text"><strong>Generation:</strong> {{ laptop_detail.generation }}</p>
+            <p class="card-text"><strong>Processor:</strong> {{ laptop_detail.processor }}</p>
+            <p class="card-text"><strong>Ram:</strong> {{ laptop_detail.ram }}</p>
+            <p class="card-text"><strong>SSD:</strong> {{ laptop_detail.ssd }}</p>
+            <p class="card-text"><strong>Detail:</strong> {{ laptop_detail.detail }}</p>
+            <a href="{% url 'laptop_edit' laptop_detail.id %}" class="btn btn-outline-light mt-auto">Edit</a>
+            <a href="{% url 'laptop_delete' laptop_detail.id %}" class="btn btn-outline-danger mt-auto">Delete</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

@@ -6,6 +6,7 @@ from car.models import Car
 
 
 def index(request):
+    car = Car.objects.first()  # or get a specific car
     return render(request,'index.html')
 
 def car_home(request):

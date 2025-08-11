@@ -8,25 +8,35 @@
 </head>
 
 <!-- Navbar -->
-<nav class="navbar navbar-expand-lg bg-dark navbar-dark fixed-top mb-90">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="{% url 'about' %}"><b><b>Laptops</b></b></a>
+    <a class="navbar-brand" href="{% url 'index' %}">My Site</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{% url 'index' %}">Home</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Games</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="{% url 'laptop' %}">Laptop</a>
+          <a class="nav-link active" href="{% url 'car_home' %}">Cars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'about' %}">Laptops</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Forms
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'laptop' %}">Laptop F</a></li>
+            <li><a class="dropdown-item" href="{% url 'game' %}">Game F</a></li>
+            <li><a class="dropdown-item" href="{% url 'car' %}">Car F</a></li>
+            <li><a class="dropdown-item" href="{% url 'contact' %}">Contact F</a></li>
+          </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button class="btn btn-outline-success" type="submit">Search</button>
-      </form>
     </div>
   </div>
 </nav>

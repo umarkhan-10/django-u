@@ -1,5 +1,7 @@
 from django.shortcuts import render , HttpResponse, redirect, get_object_or_404
-from car.models import Car
+from car.models import Car, Review
+from django.utils import timezone
+
 
 def car(request):
     if request.method == 'POST':
@@ -19,11 +21,38 @@ def car_list(request):
     cars = Car.objects.all().order_by('-timeStamp')
     return render(request, 'cars.html', {'car': cars})
 
+def car_review(request, id):
+    car = get_object_or_404(Car, id=id)
+
+    if request.method == "POST":
+        name = request.POST.get('name')
+        review_text = request.POST.get('review')
+        rating = request.POST.get('rating')
+        created_at=timezone.now()
+
+        # convert rating to int safely
+        try:
+            rating = int(rating)
+        except (TypeError, ValueError):
+            rating = 0
+
+        Review.objects.create(
+            car=car,
+            name=name,
+            review=review_text,
+            rating=rating,
+        )
+        return redirect('car_detail', id=car.id)
+
+    return render(request, 'review.html', {'car': car})
 
 def car_detail(request, id):
     car_detail = get_object_or_404(Car, id=id)
-    return render(request, 'car_detail.html', {'car_detail': car_detail})
-
+    reviews = car_detail.reviews.all().order_by('-created_at')  # fetch related reviews
+    return render(request, 'car_detail.html', {
+        'car_detail': car_detail,
+        'reviews': reviews
+    })
 
 def car_edit(request, id):
     car = get_object_or_404(Car, id=id)

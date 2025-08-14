@@ -24,6 +24,10 @@
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'about' %}">Laptops</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'books' %}">Books</a>
+        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Forms
@@ -33,12 +37,15 @@
             <li><a class="dropdown-item" href="{% url 'game' %}">Game F</a></li>
             <li><a class="dropdown-item" href="{% url 'car' %}">Car F</a></li>
             <li><a class="dropdown-item" href="{% url 'contact' %}">Contact F</a></li>
+            <li><a class="dropdown-item" href="{% url 'book' %}">Book F</a></li>
+
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
 <!-- Loop -->
 <div class="container mt-5">
   <div class="row justify-content-center">

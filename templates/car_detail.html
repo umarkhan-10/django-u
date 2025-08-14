@@ -25,32 +25,32 @@
             <hr>
 
             <h2>Reviews for {{ car_detail.name }}</h2>
-
+<!-- Review -->
             {% if reviews %}
                 <ul class="list-unstyled">
                 {% for review in reviews %}
                     <li class="mb-3">
-                        <strong>{{ review.name }}</strong><br>
+                    <p><strong>Name : </strong>{{ review.name }}</p>
+                    <p><strong>Review : </strong>{{ review.review }}</p>
+                <!-- Star rating -->
+                    {% for i in "12345" %}
+                        {% if forloop.counter <= review.rating %}
+                        <span style="color: gold;">★</span>
+                    {% else %}
+                            <span style="color: lightgray;">★</span>
+                        {% endif %}
+                    {% endfor %}
 
-                        <!-- Star rating -->
-                        {% for i in "12345" %}
-                            {% if forloop.counter <= review.rating %}
-                                <span style="color: gold;">★</span>
-                            {% else %}
-                                <span style="color: lightgray;">★</span>
-                            {% endif %}
-                        {% endfor %}
-                        <br>
-
-                        {{ review.review }}<br>
-                        <small class="text-muted">{{ review.created_at|date:"M d, Y" }}</small>
+                    <small class="text-muted">{{ review.created_at|date:"M d, Y" }}</small>
+                    <hr>
                     </li>
                 {% endfor %}
-                </ul>
-            {% else %}
-                <p>No reviews yet.</p>
-            {% endif %}
+            </ul>
+    {% else %}
+        <p>No reviews yet.</p>
+    {% endif %}
 
+ <!-- Review End -->
             <a href="{% url 'car_review' car_detail.id %}" class="btn btn-outline-primary mt-auto">Review</a>
             <br><br>
             <a href="{% url 'car_edit' car_detail.id %}" class="btn btn-outline-light mt-auto">Edit</a>

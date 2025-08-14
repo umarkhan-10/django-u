@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'games.apps.GamesConfig',
     'laptop.apps.LaptopConfig',
     'car.apps.CarConfig',
+    'book.apps.BookConfig',
 
     
 

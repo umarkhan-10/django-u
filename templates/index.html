@@ -41,6 +41,10 @@
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'about' %}">Laptops</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'books' %}">Books</a>
+        </li>
+
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Forms
@@ -49,6 +53,8 @@
             <li><a class="dropdown-item" href="{% url 'laptop' %}">Laptop F</a></li>
             <li><a class="dropdown-item" href="{% url 'game' %}">Game F</a></li>
             <li><a class="dropdown-item" href="{% url 'car' %}">Car F</a></li>
+            <li><a class="dropdown-item" href="{% url 'contact' %}">Contact F</a></li>
+            <li><a class="dropdown-item" href="{% url 'book' %}">Book F</a></li>
 
           </ul>
         </li>
@@ -61,27 +67,6 @@
     <h1>Koenigsegg</h1>
     </div>
     <img src="{% static 'Jesko.jpg' %}" alt="jesko" style="display: block; margin: 0 auto; border-radius: 3%; width: 900px; height: 550px; ">
-
-    <div class="para">
-    <p>
-        Koenigsegg Automotive AB is a Swedish hypercar manufacturer founded in 1994 by Christian von Koenigsegg.
-        The company is renowned for producing some of the fastest, most advanced, and most exclusive cars in
-        the world. Based in Sweden, Koenigsegg specializes in cutting-edge automotive technologies and
-        ultra-high-performance vehicles. Their cars often feature revolutionary innovations such as the 
-        Freevalve camless engine technology, lightweight carbon monocoque chassis, Triplex suspension 
-        systems, and their signature Dihedral Synchro-Helix doors. Koenigsegg designs and manufactures
-        its own powerful engines in-house, setting them apart from most other supercar brands.
-        <br>
-        <br>
-        Some of their most iconic models include the Jesko, a track-focused beast with over 1600 horsepower
-        and a top speed exceeding 480 km/h; the Regera, a luxury hybrid hypercar that eliminates the
-        traditional gearbox while delivering over 1500 horsepower; the Agera RS, which once held the world 
-        record for fastest production car at 447 km/h; the Gemera, a groundbreaking 4-seater hybrid hypercar 
-        producing 1700+ HP; and the CC850, a retro-modern machine that features a unique transmission capable 
-        of switching between manual and automatic modes. Koenigsegg hypercars are rare and extremely expensive,
-        typically priced between $2 to $4 million USD or more. The brand stands at the pinnacle of automotive 
-        engineering, combining extreme speed, elegant design, and technical innovation.
-    </p></div>
 
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 

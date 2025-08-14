@@ -26,29 +26,26 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'index' %}">My Site</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
-      data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" 
-      aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link {% if request.resolver_match.url_name == 'home' %}active{% endif %}" 
-             aria-current="page" href="{% url 'home' %}">Games</a>
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Games</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.resolver_match.url_name == 'car_home' %}active{% endif %}" 
-             href="{% url 'car_home' %}">Cars</a>
+          <a class="nav-link active" href="{% url 'car_home' %}">Cars</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}" 
-             href="{% url 'about' %}">Laptops</a>
+          <a class="nav-link active" href="{% url 'about' %}">Laptops</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'books' %}">Books</a>
+        </li>
+
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" 
-             aria-expanded="false">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Forms
           </a>
           <ul class="dropdown-menu">
@@ -56,12 +53,15 @@
             <li><a class="dropdown-item" href="{% url 'game' %}">Game F</a></li>
             <li><a class="dropdown-item" href="{% url 'car' %}">Car F</a></li>
             <li><a class="dropdown-item" href="{% url 'contact' %}">Contact F</a></li>
+            <li><a class="dropdown-item" href="{% url 'book' %}">Book F</a></li>
+
           </ul>
         </li>
       </ul>
     </div>
   </div>
 </nav>
+
 
 
 <h1 style="font-size: 50px; text-align: center;"><b>Add Car</b></h1>

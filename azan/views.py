@@ -3,6 +3,8 @@ from django.shortcuts import render
 from games.models import Games
 from laptop.models import Laptop
 from car.models import Car
+from book.models import Book
+
 
 
 def index(request):
@@ -29,3 +31,14 @@ def about(request):
         "laptops": laptops
     }
     return render(request, 'about.html', context)
+
+def books_view(request):
+    books = Book.objects.all()
+    context = {
+        "books": books
+    }
+    return render(request, 'books.html', context)
+    
+
+
+

@@ -47,8 +47,6 @@
   </div>
 </nav>
 
-
-
 <body class="bg-dark text-white">
 
 <div class="container mt-5">
@@ -63,6 +61,7 @@
                         <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
                         <p class="card-text"><strong>Publishyear:</strong> {{ book.publishyear }}</p>
                         <p class="card-text"><small class="text-light">Posted on: {{ book.timeStamp|date:"M d, Y H:i" }}</small></p>
+                        <a href="{% url 'book_delete' book.id %}" class="btn btn-outline-danger mt-auto">Delete</a>
                     </div>
                 </div>
             </div>
@@ -71,7 +70,6 @@
         {% endfor %}
     </div>
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
 </body>

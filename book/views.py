@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from book.models import Book,Authors
+from django.utils import timezone
 
 def book(request):
     if request.method=="POST":
@@ -13,9 +14,7 @@ def book(request):
         return redirect("book")
     authors = Authors.objects.all()
     return render(request, "book_form.html",{"authors":authors})
-
-
-
+    
 def authors(request, book_id):
     book = get_object_or_404(Book, id=book_id)
 
@@ -34,4 +33,7 @@ def authors(request, book_id):
         )
         author.save()
 
-    return render(request, "add_authors.html", {"book": book})
+def book_delete(request, id):
+    book = get_object_or_404(Book, id=id)
+    book.delete()
+    return redirect('books')        

@@ -9,6 +9,7 @@ class Car(models.Model):
     price = models.TextField(null=True, blank=True)
     madein = models.TextField(null=True, blank=True)
     topspeed = models.TextField(null=True, blank=True)
+    timeStamp = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.name or "Unnamed Car"

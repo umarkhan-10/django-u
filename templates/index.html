@@ -6,7 +6,8 @@
   <link rel="icon" type="image/png" href="{% static 'K-logo.jpg' %}">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
-<body style="background-color :rgb(0, 0, 0);">
+<body class="bg-dark text-white">
+
     <style>
         .car{
             text-align: center;
@@ -63,10 +64,72 @@
   </div>
 </nav>
 
-    <div class="car">
-    <h1>Koenigsegg</h1>
+<div class="container">
+    <h1 style="font-size: 30px; text-align: center; padding: 5px; color: #e7d9d9;margin-bottom: auto;"><b><b>Welcome</b><b></h1>
+  </div>
+<div class="container">
+<div id="carouselExampleCaptions" class="carousel slide">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" aria-label="Slide 4"></button>
+  </div>
+  <div class="carousel-inner">
+
+    <div class="carousel-item active">
+       <a href="home">
+      <img src="{% static 'game.jpg' %}" class="d-block w-100" style="display: block; margin: 0 auto; border-radius: 2%; height: 560px;" alt="game">
+       </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Click for more info</h5>
+        <p>About Games</p>
+      </div>
     </div>
-    <img src="{% static 'Jesko.jpg' %}" alt="jesko" style="display: block; margin: 0 auto; border-radius: 3%; width: 900px; height: 550px; ">
+
+    <div class="carousel-item">
+       <a href="car_home">
+      <img src="{% static 'car.jpg' %}" class="d-block w-100" style="display: block; margin: 0 auto; border-radius: 2%; height: 560px;" alt="car">
+       </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Click for more info</h5>
+        <p>About Cars</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+       <a href="books">
+      <img src="{% static 'book.jpg' %}" class="d-block w-100" style="display: block; margin: 0 auto; border-radius: 2%; height: 560px;" alt="book">
+    </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Click for more info</h5>
+        <p>About Books</p>
+      </div>
+    </div>
+
+    <div class="carousel-item">
+       <a href="about">
+      <img src="{% static 'lap.jpg' %}" class="d-block w-100" style="display: block; margin: 0 auto; border-radius: 2%; height: 560px;" alt="lap">
+       </a>
+      <div class="carousel-caption d-none d-md-block">
+        <h5>Click for more info</h5>
+        <p>About Laptops</p>
+      </div>
+    </div>
+  </div>
+
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+
+
 
 
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" 

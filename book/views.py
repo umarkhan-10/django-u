@@ -1,5 +1,5 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from book.models import Book,Authors
+from book.models import Book, Authors
 from django.utils import timezone
 
 def book(request):
@@ -36,4 +36,4 @@ def authors(request, book_id):
 def book_delete(request, id):
     book = get_object_or_404(Book, id=id)
     book.delete()
-    return redirect('books')        
+    return redirect('books')          

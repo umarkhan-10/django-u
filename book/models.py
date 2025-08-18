@@ -1,16 +1,19 @@
 from django.db import models
 
+class Country(models.Model):
+    name = models.CharField()
+
+    def __str__(self):
+        return self.name
+
+
 class Authors(models.Model):
     name = models.CharField(max_length=300)
     image = models.ImageField(upload_to="authors/")
     dateofbirth = models.DateField()
     publishedbooks = models.IntegerField()
-
-    def __str__(self):
-        return self.name
-
-class Country(models.Model):
-    name = models.CharField()
+    country = models.ForeignKey(Country, on_delete=models.CASCADE )
+ 
 
     def __str__(self):
         return self.name

@@ -9,6 +9,13 @@ class Authors(models.Model):
     def __str__(self):
         return self.name
 
+class Country(models.Model):
+    name = models.CharField()
+
+    def __str__(self):
+        return self.name
+
+
 class Book(models.Model):
     title = models.CharField(max_length=255)
     image = models.ImageField(upload_to="books/")

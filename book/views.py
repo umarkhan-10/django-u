@@ -23,6 +23,7 @@ def authors(request, book_id):
         image = request.FILES.get('image')
         dateofbirth = request.POST['dateofbirth']
         publishedbooks = request.POST['publishedbooks']
+        country_id = request.POST['country']
 
         author = Authors(
             name=name,
@@ -31,7 +32,7 @@ def authors(request, book_id):
             publishedbooks=publishedbooks,
             book=book  # connect author to this book
         )
-        author.save()
+        author.save() 
 
 def book_delete(request, id):
     book = get_object_or_404(Book, id=id)

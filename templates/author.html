@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Book List</title>
+    <title>Author List</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 </head>
 
@@ -29,10 +29,6 @@
           <a class="nav-link active" href="{% url 'books' %}">Books</a>
         </li>
 
-        <li class="nav-item">
-          <a class="nav-link active" href="{% url 'author' %}">Authors</a>
-        </li>
-
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Forms
@@ -43,7 +39,6 @@
             <li><a class="dropdown-item" href="{% url 'car' %}">Car F</a></li>
             <li><a class="dropdown-item" href="{% url 'contact' %}">Contact F</a></li>
             <li><a class="dropdown-item" href="{% url 'book' %}">Book F</a></li>
-
           </ul>
         </li>
       </ul>
@@ -54,23 +49,24 @@
 <body class="bg-dark text-white">
 
 <div class="container mt-5">
-    <h2 class="text-center mb-4">Books Listings</h2>
+    <h2 class="text-center mb-4">Authors Listings</h2>
     <div class="row">
-        {% for book in books %}
+        {% for author in authors %}
             <div class="col-md-4 mb-4">
                 <div class="card bg-secondary text-white h-100 shadow rounded-4">
-                    <img src="{{ book.image.url }}" class="card-img-top rounded-top-4" alt="{{ book.name }}" style="height: 250px; object-fit: cover;">
+                    <img src="{{ author.image.url }}" class="card-img-top rounded-top-4" alt="{{ author.name }}" style="height: 250px; object-fit: cover;">
                     <div class="card-body">
-                        <h5 class="card-title">{{ book.title }}</h5>
-                        <p class="card-text"><strong>Author:</strong> {{ book.author }}</p>
-                        <p class="card-text"><strong>Publishyear:</strong> {{ book.publishyear }}</p>
-                        <p class="card-text"><small class="text-light">Posted on: {{ book.timeStamp|date:"M d, Y H:i" }}</small></p>
-                        <a href="{% url 'book_delete' book.id %}" class="btn btn-outline-danger mt-auto">Delete</a>
+                        <h5 class="card-title">{{ author.name }}</h5>
+                        <p class="card-text"><strong>Date of Birth:</strong> {{ author.dateofbirth }}</p>
+                        <p class="card-text"><strong>Published Books:</strong> {{ author.publishedbooks }}</p>
+                        <p class="card-text"><strong>Country:</strong> {{ author.country }}</p>
+                        <p class="card-text"><small class="text-light">Posted on: {{ author.timeStamp|date:"M d, Y H:i" }}</small></p>
+            
                     </div>
                 </div>
             </div>
         {% empty %}
-            <p class="text-center">No book available.</p>
+            <p class="text-center">No author available.</p>
         {% endfor %}
     </div>
 </div>

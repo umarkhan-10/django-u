@@ -16,6 +16,8 @@ urlpatterns = [
     path('about', views.about, name='about'),
     # Book home
     path('books/', views.books_view, name="books" ),
+    # Author home
+    path('author', views.authors_view, name='author'),
     # Car home
     path('car_home', views.car_home, name='car_home'),
     #Contact apps url

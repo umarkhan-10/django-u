@@ -4,6 +4,7 @@ from games.models import Games
 from laptop.models import Laptop
 from car.models import Car
 from book.models import Book
+from book.models import Authors
 
 
 
@@ -38,6 +39,14 @@ def books_view(request):
         "books": books
     }
     return render(request, 'books.html', context)
+
+def authors_view(request):
+    author = Authors.objects.all()
+    context = {
+        "authors": author
+    }
+    return render(request, 'author.html', context)
+
     
 
 

@@ -14,7 +14,6 @@ class Authors(models.Model):
     publishedbooks = models.IntegerField()
     country = models.ForeignKey(Country, on_delete=models.CASCADE )
  
-
     def __str__(self):
         return self.name
 
@@ -29,3 +28,4 @@ class Book(models.Model):
 
     def __str__(self):
         return self.title
+        

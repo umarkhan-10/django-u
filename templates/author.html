@@ -61,6 +61,7 @@
                         <p class="card-text"><strong>Published Books:</strong> {{ author.publishedbooks }}</p>
                         <p class="card-text"><strong>Country:</strong> {{ author.country }}</p>
                         <p class="card-text"><small class="text-light">Posted on: {{ author.timeStamp|date:"M d, Y H:i" }}</small></p>
+                        <a href="{% url 'author_detail' author.id %}" class="btn btn-outline-light mt-auto">Author Detail {{ author.id }}</a>
             
                     </div>
                 </div>

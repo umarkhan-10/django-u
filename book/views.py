@@ -34,6 +34,13 @@ def authors(request, book_id):
         )
         author.save() 
 
+
+def author_detail(request, id):
+    author_detail = get_object_or_404(Authors, id=id)
+    return render(request, 'author_detail.html', {
+        'author_detail': author_detail,
+    })        
+
 def book_delete(request, id):
     book = get_object_or_404(Book, id=id)
     book.delete()

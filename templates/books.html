@@ -66,6 +66,7 @@
                         <p class="card-text"><strong>Publishyear:</strong> {{ book.publishyear }}</p>
                         <p class="card-text"><small class="text-light">Posted on: {{ book.timeStamp|date:"M d, Y H:i" }}</small></p>
                         <a href="{% url 'book_delete' book.id %}" class="btn btn-outline-danger mt-auto">Delete</a>
+                        
                     </div>
                 </div>
             </div>

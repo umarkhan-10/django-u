@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ anime_detail.name }} - Details</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="bg-dark text-white">
+
+<div class="container mt-5">
+    <a href="{% url 'animes' %}" class="btn btn-light mb-3">← Back</a>
+
+    <div class="card bg-secondary shadow rounded-4">
+        {% if anime_detail.image %}
+        <img src="{{ anime_detail.image.url }}" class="card-img-top rounded-top-4" style="height: 400px; object-fit: cover;" alt="{{ anime_detail.name }}">
+        {% endif %}
+        <div class="card-body">
+            <h2 class="card-title">{{ anime_detail.name }}</h2>
+      <p class="card-text"><strong>Author:</strong> {{ anime_detail.author }}</p>
+      <p class="card-text"><strong>Genre:</strong> {{ anime_detail.genre }}</p>
+      <p class="card-text"><strong>Release Date:</strong> {{ anime_detail.release_date }}</p>
+      <p class="card-text"><strong>Rating:</strong> {{ anime_detail.rating }}</p>
+      <p class="card-text"><strong>Description:</strong> {{ anime_detail.description }}</p>
+            <hr>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

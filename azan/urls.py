@@ -14,10 +14,10 @@ urlpatterns = [
     path('home', views.home, name='home'),
     # Laptop home
     path('about', views.about, name='about'),
+    # Anime home
+    path('animes', views.animes_view, name='animes'),
     # Book home
     path('books/', views.books_view, name="books" ),
-    # Author home
-    path('author', views.authors_view, name='author'),
     # Car home
     path('car_home', views.car_home, name='car_home'),
     #Contact apps url
@@ -26,6 +26,7 @@ urlpatterns = [
     path('laptop/', include('laptop.urls')),
     path('car/', include('car.urls')),
     path('book/', include('book.urls')),
+    path('anime/', include('anime.urls')),
 
 ]
 if settings.DEBUG:

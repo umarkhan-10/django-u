@@ -31,10 +31,8 @@ INSTALLED_APPS = [
     'laptop.apps.LaptopConfig',
     'car.apps.CarConfig',
     'book.apps.BookConfig',
+    'anime.apps.AnimeConfig',
 
-    
-
-    
 ]
 
 MIDDLEWARE = [

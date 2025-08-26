@@ -10,6 +10,32 @@
 <body class="bg-dark text-white" style="padding-top: 0px;">
   
   <!-- Navbar -->
+    <style>
+      
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+            transition: 0.3s;
+        }
+
+        .navbar-brand {
+            letter-spacing: 1px;
+        }
+
+        .card-hover-zoom {
+        transition: transform 0.3s ease;
+        }
+         
+       .card-hover-zoom:hover {
+       transform: scale(1.03);
+       }
+
+       .card-hover-zoom:hover {
+       transform: scale(1.03);
+       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+       }
+
+    </style>
+
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
     <a class="navbar-brand" href="{% url 'index' %}">My Site</a>
@@ -30,6 +56,10 @@
         <li class="nav-item">
           <a class="nav-link active" href="{% url 'books' %}">Books</a>
         </li>
+        
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'animes' %}">Animes</a>
+        </li>
 
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -41,7 +71,6 @@
             <li><a class="dropdown-item" href="{% url 'car' %}">Car F</a></li>
             <li><a class="dropdown-item" href="{% url 'contact' %}">Contact F</a></li>
             <li><a class="dropdown-item" href="{% url 'book' %}">Book F</a></li>
-
           </ul>
         </li>
       </ul>

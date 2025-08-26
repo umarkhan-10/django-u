@@ -1,0 +1,119 @@
+<!doctype html>
+<head>
+<!-- Metas -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Title -->
+    <title>Animes</title>
+    <link rel="icon" type="image/x-icon" href="https://live.staticflickr.com/7410/12272594713_fb1db15882_z.jpg">
+    {% load static %}
+  <link rel="stylesheet" href="{% static 'aot.css' %}">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+</head>
+
+
+<!-- Body -->
+
+    <style>
+      
+        .navbar-nav .nav-link:hover {
+            color: #ffc107;
+            transition: 0.3s;
+        }
+
+        .navbar-brand {
+            letter-spacing: 1px;
+        }
+
+        .card-hover-zoom {
+        transition: transform 0.3s ease;
+        }
+         
+       .card-hover-zoom:hover {
+       transform: scale(1.03);
+       }
+
+       .card-hover-zoom:hover {
+       transform: scale(1.03);
+       box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+       }
+
+    </style>
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="{% url 'index' %}">My Site</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Games</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'car_home' %}">Cars</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'about' %}">Laptops</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'books' %}">Books</a>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'animes' %}">Animes</a>
+        </li>
+
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Forms
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="{% url 'laptop' %}">Laptop F</a></li>
+            <li><a class="dropdown-item" href="{% url 'game' %}">Game F</a></li>
+            <li><a class="dropdown-item" href="{% url 'car' %}">Car F</a></li>
+            <li><a class="dropdown-item" href="{% url 'contact' %}">Contact F</a></li>
+            <li><a class="dropdown-item" href="{% url 'book' %}">Book F</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <body class="bg-dark text-white">
+
+      <!-- Loop -->
+<div class="container mt-5">
+    <h2 class="text-center mb-4 p-3">Animes Listing</h2>
+    <div class="row">
+        {% for anime in animes %}
+            <div class="col-md-4 mb-4">
+  <div class="card card-hover-zoom bg-dark text-white shadow rounded-4 border-0 h-100"
+       style="min-height: 500px;">
+    <img src="{{ anime.image.url }}" class="card-img-top rounded-top-4" alt="{{ anime.name }}" style="height: 250px; object-fit: cover;">
+    <div class="card-body">
+      <h5 class="card-title">{{ anime.title }}</h5>
+      <p class="card-text"><strong>Author:</strong> {{ anime.author }}</p>
+      <p class="card-text"><strong>Genre:</strong> {{ anime.genre }}</p>
+      <p class="card-text"><strong>Release Date:</strong> {{ anime.release_date }}</p>
+      <p class="card-text"><strong>Rating:</strong> {{ anime.rating }}</p>
+        <a href="{% url 'author_detail' anime.author.id %}" class="btn btn-outline-info mt-auto">Author{{ author.id }}</a>
+        <a href="{% url 'anime_detail' anime.id %}" class="btn btn-outline-light mt-auto">Anime Detail</a>
+      </div>
+  </div>
+</div>
+
+        {% empty %}
+            <p class="text-center">No animes available.</p>
+        {% endfor %}
+    </div>
+</div>
+
+
+
+            <!-- Bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+    </body>
+</html>

@@ -4,8 +4,6 @@ from games.models import Games
 from laptop.models import Laptop
 from car.models import Car
 from book.models import Book
-from book.models import Authors
-
 
 
 def index(request):
@@ -40,13 +38,10 @@ def books_view(request):
     }
     return render(request, 'books.html', context)
 
-def authors_view(request):
-    author = Authors.objects.all()
-    context = {
-        "authors": author
-    }
-    return render(request, 'author.html', context)
-
+def animes_view(request):
+    from anime.models import Anime
+    animes = Anime.objects.all()
+    return render(request, "animes.html", {"animes": animes})
     
 
 
